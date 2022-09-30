@@ -32,12 +32,12 @@ function onTextareaInput(e) {
     localStorage.setItem('feedback-form-state', message);
 }
 
-function populateTxtarea() {
+(function populateTxtarea() {
   const data = JSON.parse(localStorage.getItem('feedback-form-state'));
   const email = document.querySelector('.feedback-form input');
   if (data) {
     email.value = data.email;
     textarea.value = data.textarea;
   }
-};
+})();
 
